@@ -28,6 +28,7 @@ var (
 	books = []Book{book1, book2}
 )
 
+
 func getBooks(i int32) Book {
 	return books[i-1]
 }
