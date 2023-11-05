@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option go_package = "gihyo/catalogue/proto/book";
+
+package book;
+
+// GetBookRequestを受け取り、GetBookResponseを返すCatalogというgRPCサービスの定義
+service Catalogue {
+  rpc GetBook (GetBookRequest) returns (GetBookResponse) {}
+}
+// リクエストの定義
+message GetBookRequest {
+  int32 id = 1;
+}
+// レスポンスの定義
+message GetBookResponse {
+  Book book = 1;
+}
+// 書籍情報の定義（レスポンス）
+message Book {
+  int32 id = 1;
+  string title = 2;
+  string author = 3;
+  int32 price = 4;
+}
